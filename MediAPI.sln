@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medi.Core", "Medi.Core\Medi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medi.Infrastructure", "Medi.Infrastructure\Medi.Infrastructure.csproj", "{1408B153-FE9B-4FCF-BE09-B03B37A37BCF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medi.WebApi", "Medi.WebApi\Medi.WebApi.csproj", "{305C4B52-1E6F-482D-B590-157C37D3B760}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{1408B153-FE9B-4FCF-BE09-B03B37A37BCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1408B153-FE9B-4FCF-BE09-B03B37A37BCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1408B153-FE9B-4FCF-BE09-B03B37A37BCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{305C4B52-1E6F-482D-B590-157C37D3B760}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{305C4B52-1E6F-482D-B590-157C37D3B760}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{305C4B52-1E6F-482D-B590-157C37D3B760}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{305C4B52-1E6F-482D-B590-157C37D3B760}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

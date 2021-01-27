@@ -1,6 +1,6 @@
 ﻿using Medi.Core.Domain;
 
-namespace MediAPI.DTO
+namespace Medi.WebApi.DTO
 {
     public class DoctorDto
     {

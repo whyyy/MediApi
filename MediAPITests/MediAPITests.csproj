@@ -17,6 +17,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Medi.Api\Medi.Api.csproj" />
+      <ProjectReference Include="..\Medi.WebApi\Medi.WebApi.csproj" />
     </ItemGroup>
 
 </Project>

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using AutoMapper;
 using Medi.Core.Domain;
 using Medi.Core.Repositories;
-using MediAPI.DTO;
+using Medi.WebApi.DTO;
 
-namespace MediAPI.Services
+namespace Medi.WebApi.Services
 {
     public class DoctorService : IDoctorService
     {

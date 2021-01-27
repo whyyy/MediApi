@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using Medi.Core.Domain;
-using MediAPI.DTO;
+using Medi.WebApi.DTO;
 
-namespace MediAPI.Mappers
+namespace Medi.WebApi.Mappers
 {
     public static class AutoMapperConfig
     {

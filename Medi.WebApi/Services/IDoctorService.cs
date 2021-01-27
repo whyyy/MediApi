@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using Medi.Core.Domain;
-using MediAPI.DTO;
+using Medi.WebApi.DTO;
 
-namespace MediAPI.Services
+namespace Medi.WebApi.Services
 {
     public interface IDoctorService
     {
