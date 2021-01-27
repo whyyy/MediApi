@@ -1,4 +1,4 @@
-﻿namespace MediAPI.Helpers
+﻿namespace Medi.Core.Domain
 {
     public enum Specialization
     {
