@@ -14,6 +14,6 @@ namespace Medi.Core.Repositories
 
         void Update(Doctor doctor);
 
-        void Delete(Doctor doctor);
+        void Delete(Guid id);
     }
 }

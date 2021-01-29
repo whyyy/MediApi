@@ -29,12 +29,13 @@ namespace Medi.Infrastructure.Repositories
 
         public void Update(Doctor doctor)
         {
-            throw new NotImplementedException();
+            _doctors.Remove(doctor);
+            _doctors.Add(doctor);
         }
 
-        public void Delete(Doctor doctor)
+        public void Delete(Guid id)
         {
-            _doctors.Remove(doctor);
+            _doctors.Remove(_doctors.SingleOrDefault(d => d.Id == id));
         }
     }
 }

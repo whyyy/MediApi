@@ -42,14 +42,18 @@ namespace Medi.WebApi.Services
             return _mapper.Map<DoctorDto>(doctor);
         }
 
-        public void Update(string name, string surname, Specialization specialization)
+        public void Update(Guid id, string name, string surname, Specialization specialization)
         {
-            throw new NotImplementedException();
+            var doctor = _doctorRepository.Get(id);
+            doctor.SetName(name);
+            doctor.SetSurname(surname);
+            doctor.SetSpecialization(specialization);
+            _doctorRepository.Update(doctor);
         }
 
         public void Delete(Guid id)
         {
-            throw new NotImplementedException();
+            _doctorRepository.Delete(id);
         }
     }
 }
