@@ -1,4 +1,5 @@
 ﻿using System;
+using Medi.Infrastructure.Endpoints;
 using Medi.WebApi.DTO;
 using Medi.WebApi.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -45,7 +46,7 @@ namespace Medi.WebApi.Controllers
         {
             doctorDto = _doctorService.Add(doctorDto.Name, doctorDto.Surname, doctorDto.Specialization);
             
-            return Created($"api/doctors/{doctorDto.Id}", doctorDto);
+            return Created(DoctorControllerEndpoints.Post(doctorDto.Id), doctorDto);
         }
 
         [HttpPut("id")]
