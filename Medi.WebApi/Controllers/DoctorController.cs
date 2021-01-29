@@ -47,5 +47,20 @@ namespace Medi.WebApi.Controllers
             
             return Created($"api/doctors/{doctorDto.Id}", doctorDto);
         }
+
+        [HttpPut("id")]
+        public IActionResult Put(Guid id,[FromBody] DoctorDto doctorDto)
+        {
+            _doctorService.Update(id, doctorDto.Name, doctorDto.Surname, doctorDto.Specialization);
+            return NoContent();
+        }
+
+        [HttpDelete("id")]
+        public IActionResult Delete(Guid id)
+        {
+            _doctorService.Delete(id);
+
+            return NoContent();
+        }
     }
 }
