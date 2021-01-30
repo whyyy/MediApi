@@ -18,7 +18,7 @@ namespace MediAPITests
         private ILogger<DoctorController> _logger;
         private IDoctorService _doctorService;
         private DoctorController _doctorController;
-        
+
         [SetUp]
         public void Setup()
         {
@@ -31,7 +31,7 @@ namespace MediAPITests
         public void Should_ReturnOkResult_When_Get()
         {
             var result = _doctorController.Get();
-            
+
             A.CallTo(() => _doctorService.GetAll()).MustHaveHappenedOnceExactly();
             Assert.AreEqual(typeof(OkObjectResult), result.GetType());
         }
@@ -61,9 +61,9 @@ namespace MediAPITests
             doctorDto.Surname = "Surname";
             doctorDto.Specialization = Specialization.Surgery;
             A.CallTo(() => _doctorService.Get(guid)).Returns(doctorDto);
-            
+
             var result = _doctorController.Get(guid);
-            
+
             Assert.AreEqual(typeof(OkObjectResult), result.GetType());
         }
 
@@ -77,5 +77,32 @@ namespace MediAPITests
 
             Assert.AreEqual(typeof(NotFoundResult), result.GetType());
         }
-    }
+
+        [Test]
+        public void Should_ReturnNoContent_When_Put()
+        {
+            var guid = Guid.NewGuid();
+            var updatedDoctorDto = A.Fake<DoctorDto>();
+            updatedDoctorDto.Name = "NewName";
+            updatedDoctorDto.Surname = "NewSurname";
+            updatedDoctorDto.Specialization = Specialization.Radiology;
+
+            var result = _doctorController.Put(guid, updatedDoctorDto);
+
+            A.CallTo(() => _doctorService.Update(guid, updatedDoctorDto.Name, updatedDoctorDto.Surname,
+                updatedDoctorDto.Specialization)).MustHaveHappenedOnceExactly();
+            Assert.AreEqual(typeof(NoContentResult), result.GetType());
+        }
+
+        [Test]
+        public void Should_ReturnNoContent_When_Delete()
+        {
+            var guid = Guid.NewGuid();
+
+            var result = _doctorController.Delete(guid);
+
+            A.CallTo(() => _doctorService.Delete(guid)).MustHaveHappenedOnceExactly();
+            Assert.AreEqual(typeof(NoContentResult), result.GetType());
+        }
+}
 }
