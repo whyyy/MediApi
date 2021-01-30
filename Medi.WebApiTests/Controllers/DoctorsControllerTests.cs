@@ -10,7 +10,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
 using Assert = NUnit.Framework.Assert;
 
-namespace MediAPITests
+namespace MediAPITests.Controllers
 {
     [TestClass]
     public class DoctorsControllerTests
