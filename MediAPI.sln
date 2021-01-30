@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{7A99A450-76B6-451D-9830-D55630D995B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediAPITests", "MediAPITests\MediAPITests.csproj", "{E9CEBF24-8A6B-4DB4-8F17-E9BB072204DA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medi.WebApiTests", "Medi.WebApiTests\Medi.WebApiTests.csproj", "{E9CEBF24-8A6B-4DB4-8F17-E9BB072204DA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Medi.Core", "Medi.Core\Medi.Core.csproj", "{895A9E36-EA6A-48BE-9F66-567B1115ECD5}"
 EndProject
