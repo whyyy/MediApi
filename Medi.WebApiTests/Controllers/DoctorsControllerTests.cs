@@ -6,13 +6,12 @@ using Medi.WebApi.DTO;
 using Medi.WebApi.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
 using Assert = NUnit.Framework.Assert;
 
 namespace MediAPITests.Controllers
 {
-    [TestClass]
+    [TestFixture]
     public class DoctorsControllerTests
     {
         private ILogger<DoctorController> _logger;
