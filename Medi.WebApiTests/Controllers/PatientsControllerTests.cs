@@ -23,7 +23,7 @@ namespace MediAPITests.Controllers
         }
 
         [Test]
-        public void Should_ReturnPatientsAndOkResult_When_GetAll()
+        public void Should_ReturnPatientsAndOkResult_When_Get()
         {
             var result = _patientController.Get();
 
