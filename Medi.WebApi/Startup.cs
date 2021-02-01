@@ -1,5 +1,6 @@
 using Medi.Core.Repositories;
 using Medi.Infrastructure.Repositories;
+using Medi.WebApi.Controllers;
 using Medi.WebApi.Mappers;
 using Medi.WebApi.Services;
 using Microsoft.AspNetCore.Builder;
@@ -25,6 +26,7 @@ namespace Medi.WebApi
         {
             services.AddSingleton<IDoctorRepository, DoctorRepository>();
             services.AddScoped<IDoctorService, DoctorService>();
+            services.AddScoped<IPatientService, PatientService>();
             services.AddSingleton(AutoMapperConfig.Initialize());
             services.AddControllers()
                 .AddJsonOptions(options =>
