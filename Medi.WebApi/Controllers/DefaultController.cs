@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace MediAPI.Controllers
+namespace Medi.WebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]

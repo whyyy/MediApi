@@ -4,6 +4,8 @@
         <TargetFramework>netcoreapp3.1</TargetFramework>
 
         <IsPackable>false</IsPackable>
+
+        <RootNamespace>MediAPITests</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -16,7 +18,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\MediAPI\MediAPI.csproj" />
+      <ProjectReference Include="..\Medi.WebApi\Medi.WebApi.csproj" />
     </ItemGroup>
 
 </Project>

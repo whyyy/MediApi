@@ -1,0 +1,59 @@
+﻿using System;
+using System.Collections.Generic;
+using AutoMapper;
+using Medi.Core.Domain;
+using Medi.Core.Repositories;
+using Medi.WebApi.DTO;
+
+namespace Medi.WebApi.Services
+{
+    public class DoctorService : IDoctorService
+    {
+        private readonly IDoctorRepository _doctorRepository;
+        private readonly IMapper _mapper;
+
+        public DoctorService(IDoctorRepository doctorRepository, IMapper mapper)
+        {
+            _doctorRepository = doctorRepository;
+            _mapper = mapper;
+        }
+        
+        public DoctorDto Get(Guid id)
+        {
+            var doctor = _doctorRepository.Get(id);
+
+            return _mapper.Map<DoctorDto>(doctor);
+        }
+
+        public IEnumerable<DoctorDto> GetAll()
+        {
+            var doctors = _doctorRepository.GetAll();
+
+            return _mapper.Map<IEnumerable<DoctorDto>>(doctors);
+        }
+
+        public DoctorDto Add(string name, string surname, Specialization specialization)
+        {
+            var id = Guid.NewGuid();
+            var doctor = new Doctor(id, name, surname, specialization);
+
+            _doctorRepository.Add(doctor);
+            
+            return _mapper.Map<DoctorDto>(doctor);
+        }
+
+        public void Update(Guid id, string name, string surname, Specialization specialization)
+        {
+            var doctor = _doctorRepository.Get(id);
+            doctor.SetName(name);
+            doctor.SetSurname(surname);
+            doctor.SetSpecialization(specialization);
+            _doctorRepository.Update(doctor);
+        }
+
+        public void Delete(Guid id)
+        {
+            _doctorRepository.Delete(id);
+        }
+    }
+}
