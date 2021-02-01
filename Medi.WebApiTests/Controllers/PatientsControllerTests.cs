@@ -23,7 +23,7 @@ namespace MediAPITests.Controllers
         [Test]
         public void Should_ReturnPatientsAndOkResult_When_GetAll()
         {
-            var result = _patientController.GetAll();
+            var result = _patientController.Get();
 
             A.CallTo(() => _patientService.GetAll()).MustHaveHappened();
             Assert.AreEqual(typeof(OkResult), result.GetType());
