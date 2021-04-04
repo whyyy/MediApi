@@ -7,8 +7,8 @@ using Microsoft.Extensions.Logging;
 
 namespace Medi.WebApi.Controllers
 {
+    [Route("api/[controller]")]
     [ApiController]
-    [Route("[controller]")]
     public class DoctorController : ControllerBase
     {
         private readonly ILogger<DoctorController> _logger;
@@ -19,7 +19,7 @@ namespace Medi.WebApi.Controllers
             _logger = logger;
             _doctorService = doctorService;
         }
-        
+
         [HttpGet]
         public IActionResult Get()
         {
@@ -45,7 +45,7 @@ namespace Medi.WebApi.Controllers
         public IActionResult Post([FromBody] DoctorDto doctorDto)
         {
             doctorDto = _doctorService.Add(doctorDto.Name, doctorDto.Surname, doctorDto.Specialization);
-            
+
             return Created(DoctorControllerEndpoints.Post(doctorDto.Id), doctorDto);
         }
 
@@ -53,6 +53,7 @@ namespace Medi.WebApi.Controllers
         public IActionResult Put(Guid id,[FromBody] DoctorDto doctorDto)
         {
             _doctorService.Update(id, doctorDto.Name, doctorDto.Surname, doctorDto.Specialization);
+            
             return NoContent();
         }
 
