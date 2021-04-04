@@ -63,14 +63,6 @@ namespace MediAPITests.Services
             A.CallTo(() => _doctorRepository.Update(A<Doctor>._)).MustHaveHappened();
         }
 
-        [TestCase("", "SurnameHere", Specialization.Gynecology)]
-        [TestCase("Name", "", Specialization.Pediatrics)]
-        [TestCase("Name", "", null)]
-        public void Should_ThrowError_When_UpdateWithEmptyParam(string name, string surname, Specialization specialization)
-        {
-            Assert.Throws<ArgumentNullException>(() => _doctorService.Update(Guid.Empty, name, surname, specialization));
-        }
-
         [Test]
         public void Should_CallDelete_When_Delete()
         {
