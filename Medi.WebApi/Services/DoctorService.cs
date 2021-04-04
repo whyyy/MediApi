@@ -44,10 +44,7 @@ namespace Medi.WebApi.Services
 
         public void Update(Guid id, string name, string surname, Specialization specialization)
         {
-            var doctor = _doctorRepository.Get(id);
-            doctor.SetName(name);
-            doctor.SetSurname(surname);
-            doctor.SetSpecialization(specialization);
+            var doctor = new Doctor(id, name, surname, specialization);
             _doctorRepository.Update(doctor);
         }
 
