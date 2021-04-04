@@ -52,14 +52,14 @@ namespace Medi.Infrastructure.Repositories
 
         public void Delete(Guid id)
         {
-            var doctor = _mediContext.Doctors.FirstOrDefault(d => d.Id == id);
+            var existingDoctor = _mediContext.Doctors.FirstOrDefault(d => d.Id == id);
 
-            if (doctor is null)
+            if (existingDoctor is null)
             {
                 return;
             }
             
-            _mediContext.Doctors.Remove(_mediContext.Doctors.SingleOrDefault(d => d.Id == id));
+            _mediContext.Doctors.Remove(existingDoctor);
             _mediContext.SaveChanges();
         }
     }
