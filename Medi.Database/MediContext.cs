@@ -1,7 +1,5 @@
-﻿using System.IO;
-using Medi.Core.Domain;
+﻿using Medi.Core.Domain;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 
 namespace Medi.Database
 {
@@ -16,19 +14,14 @@ namespace Medi.Database
         {
         }
         
+        public DbSet<Doctor> Doctors { get; set; }
+        
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
             if (!options.IsConfigured)
             {
-                options.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=MediApiDB;Trusted_Connection=True;");
+                options.UseSqlServer(Configuration.ConnectionString);
             }
         }
-        
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);            
-        }
-
-        public DbSet<Doctor> Doctors { get; set; }
     }
 }
