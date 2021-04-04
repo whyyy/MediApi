@@ -6,6 +6,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Medi.Core\Medi.Core.csproj" />
+      <ProjectReference Include="..\Medi.Database\Medi.Database.csproj" />
     </ItemGroup>
 
 </Project>

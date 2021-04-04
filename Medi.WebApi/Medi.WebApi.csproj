@@ -6,11 +6,13 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Medi.Core\Medi.Core.csproj" />
+      <ProjectReference Include="..\Medi.Database\Medi.Database.csproj" />
       <ProjectReference Include="..\Medi.Infrastructure\Medi.Infrastructure.csproj" />
     </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="AutoMapper" Version="10.1.1" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.9" />
       <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
     </ItemGroup>
 
