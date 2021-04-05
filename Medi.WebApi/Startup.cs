@@ -1,11 +1,11 @@
 using Medi.Core.Repositories;
 using Medi.Database;
 using Medi.Infrastructure.Repositories;
-using Microsoft.EntityFrameworkCore;
 using Medi.WebApi.Mappers;
 using Medi.WebApi.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -27,7 +27,9 @@ namespace Medi.WebApi
         {
             services.AddDbContext<MediContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IDoctorRepository, DoctorRepository>();
+            services.AddScoped<IPatientRepository, PatientRepository>();
             services.AddScoped<IDoctorService, DoctorService>();
+            services.AddScoped<IPatientService, PatientService>();
             services.AddSingleton(AutoMapperConfig.Initialize());
             services.AddControllers()
                 .AddJsonOptions(options =>

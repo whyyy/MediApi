@@ -4,14 +4,16 @@ using Medi.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Medi.Database.Migrations
 {
     [DbContext(typeof(MediContext))]
-    partial class MediContextModelSnapshot : ModelSnapshot
+    [Migration("20210405134313_Patient")]
+    partial class Patient
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
