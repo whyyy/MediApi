@@ -1,6 +1,6 @@
 using Medi.Core.Repositories;
+using Medi.Database;
 using Medi.Infrastructure.Repositories;
-using Medi.WebApi.Controllers;
 using Medi.WebApi.Mappers;
 using Medi.WebApi.Services;
 using Microsoft.AspNetCore.Builder;
@@ -24,7 +24,8 @@ namespace Medi.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IDoctorRepository, DoctorRepository>();
+            services.AddDbContext<MediContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped<IDoctorRepository, DoctorRepository>();
             services.AddScoped<IDoctorService, DoctorService>();
             services.AddScoped<IPatientService, PatientService>();
             services.AddSingleton(AutoMapperConfig.Initialize());
@@ -36,7 +37,7 @@ namespace Medi.WebApi
                 });
             services.AddSwaggerGen(s => s.SwaggerDoc("v1", new OpenApiInfo {Title = "MediApi", Version = "v1"}));
         }
-
+        
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
