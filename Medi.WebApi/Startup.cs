@@ -27,6 +27,7 @@ namespace Medi.WebApi
         {
             services.AddDbContext<MediContext>(x => x.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IDoctorRepository, DoctorRepository>();
+            services.AddScoped<IPatientRepository, PatientRepository>();
             services.AddScoped<IDoctorService, DoctorService>();
             services.AddScoped<IPatientService, PatientService>();
             services.AddSingleton(AutoMapperConfig.Initialize());

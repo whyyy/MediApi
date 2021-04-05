@@ -10,6 +10,7 @@ namespace Medi.WebApi.Mappers
         => new MapperConfiguration(cfg =>
         {
             cfg.CreateMap<Doctor, DoctorDto>();
+            cfg.CreateMap<Patient, PatientDto>();
         })
             .CreateMapper();
     }
